@@ -178,3 +178,38 @@ class AboutUs(Model):
     __tablename__ = 'aboutus'
     id = Column(Integer,primary_key=True)
     name = Column(String(50), nullable=False)
+
+class LoginUser(Model):
+    __talbename__ = 'loginuser'
+    id = Column(Integer,primary_key=True)
+    first_name = Column(String(64), nullable=False)
+    last_name = Column(String(64), nullable=False)
+    username = Column(String(64),unique=True, nullable=False)
+    password = Column(String(256), nullable=False)
+    email = Column(String(64), nullable=False)
+    broadbandplan_id = Column(Integer, ForeignKey('broadbandplan.id'), nullable=False)
+    broadbandplan = relationship("BroadbandPlan")
+    securityplan_id = Column(Integer, ForeignKey('securityplan.id'), nullable=False)
+    securityplan = relationship("SecurityPlan")
+    
+class SmartHome(Model):
+    __tablename__ = 'smarthome'
+    id = Column(Integer,primary_key=True)
+    name = Column(String(64), nullable=False)
+    category = Column(String(64), nullable=False)
+    price = Column(Integer, nullable=False)
+    amount = Column(Integer, nullable=True)
+    
+class SecurityPlan(Model):
+    __tablename__ = 'securityplan'
+    id = Column(Integer,primary_key=True)
+    name = Column(String(64), nullable=False)
+    price = Column(Integer, nullable=False)
+    category = Column(String(64), nullable=False)
+    
+class BroadbandPlan(Model):
+    __tablename__ = 'broadbandplan'
+    id = Column(Integer,primary_key=True)
+    name = Column(String(64), nullable=False)
+    price = Column(Integer, nullable=False)
+    category = Column(String(64), nullable=False)
