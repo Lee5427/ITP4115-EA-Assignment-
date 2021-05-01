@@ -1,0 +1,89 @@
+<!-- extend base layout -->
+{% extends "index_base.html" %}
+
+{% block head_css %}
+        {{ super() }}
+        <link href="{{url_for('static',filename='css/custom.css')}}" rel="stylesheet">
+{% endblock %}
+
+{% block content %}
+
+    <!-- Wrapper for slides -->
+   
+
+    <!-- Controls -->
+      <div class="row featurette"></div> 
+      <img src="{{url_for('static',filename='img/QNJ4WkcLljBlulevMflPIdFKWObNf7pCX5YD7wGtzlY.jpg')}}" class="img-responsive" style="border-style:solid;border-width:1px">
+        <div class="col-md-7 col-md-offset-1 col-xs-offset-1">
+          <h1 class="featurette-heading">{{_("家居寬頻 光纖入屋")}}</h1>
+          <h2 class="featurette-heading">{{_("極速光纖上網，全家共享高速穩定！")}}</h2>
+           <h4 class="featurette-heading">{{_("香港寬頻是全港第二大的光纖寬頻住宅服務供應商，更被Speedtest評為")}}</h4>
+           <h4 class="featurette-heading">{{_("全港最快寬頻服務供應商^。香港寬頻以優惠價格提供高速穩定的光纖寬頻")}}</h4>
+           <h4 class="featurette-heading">{{_("服務，配合WiFi 6 網絡安全路由器，盡享「周全上網」體驗，有效保障你")}}</h4>
+           <h4 class="featurette-heading">{{_("的家居網絡安全，防禦黑客入侵。")}}</h4>
+           <p><a class="btn btn-primary btn-lg" href="http://3.239.18.188:8080/login/" role="button">{{_("新登記")}} &raquo;</a></p>
+           <p><a class="btn btn-primary btn-lg" href="http://3.239.18.188:8080/login/" role="button">{{_("續約")}} &raquo;</a></p>
+      </div>
+
+      <ul>
+          <div class="col-md-7 col-md-offset-1 col-xs-offset-1">
+          <h2 class="featurette-heading">{{_("香港寬頻，您的最佳選擇")}}</h2>
+      </ul>
+          <div class="row featurette"></div> 
+          <img src="{{url_for('static',filename='img/index(15).jpg')}}" class="img-responsive" style="border-style:solid;border-width:1px">
+        </div>
+      </div>
+
+       <ul>
+          <div class="col-md-7 col-md-offset-1 col-xs-offset-1">
+          <h2 class="featurette-heading">{{_("3大優勢 信心保證")}}</h2>
+      </ul>
+          <div class="row featurette"></div> 
+          <img src="{{url_for('static',filename='img/index(16).jpg')}}" class="img-responsive" style="border-style:solid;border-width:1px">
+        </div>
+      </div>
+
+      <ul>
+          <div class="col-md-7 col-md-offset-1 col-xs-offset-1">
+          <h2 class="featurette-heading">{{_("1000M/2Gps光纖寬頻連最新WiFi 6 網絡安全路由器")}}</h2>
+          <h4 class="featurette-heading">{{_("一個組合就可以全面滿足你的生活所需！全新WiFi 6 網絡安全路由器全面升級！支援Wi-Fi 6同時具備企業級網絡安全防護、家長監")}}</h4>
+          <h4 class="featurette-heading">{{_("護、Mesh Wi-Fi以及家居電話功能。立即登記，提升你的家居上網體驗！")}}</h4>
+      </ul>
+          <div class="row featurette"></div> 
+          <img src="{{url_for('static',filename='img/index(17).jpg')}}" class="img-responsive" style="border-style:solid;border-width:1px">
+      <ul>    
+          <p><a class="btn btn-primary btn-lg" href="http://3.239.18.188:8080/login/" role="button">{{_("立即查詢覆蓋")}} &raquo;</a></p>
+          <p><a class="btn" href="http://3.239.18.188:8080/login/" role="button">{{_("了解更多WiFi 6 網絡安全路由器")}} &raquo;</a></p>
+      </ul>
+        </div>
+      </div>
+      
+      <ul>
+          <div class="col-md-7 col-md-offset-1 col-xs-offset-1">
+          <h5 class="featurette-heading">{{_("免責聲明")}}</h5>
+      </ul>
+      <ul>
+          <div class="col-md-7 col-md-offset-1 col-xs-offset-1">
+          <h5 class="featurette-heading">{{_("2Gbps/1000Mbps/500Mbps/100Mbps乃是由客戶單位之牆身插座至本公司第一台網絡器材之連線的規格。 2Gbps頻寬規格，最高下載頻寬為2Gbps及上")}}</h5>
+          <h5 class="featurette-heading">{{_("載頻寬為1Gbps； 1000Mbps/500Mbps/100Mbps上/下載速度至本地網站最高可達1000Mbps/500Mbps/100Mbps，但實際可享用之頻寬會受客戶之軟件")}}</h5>
+          <h5 class="featurette-heading">{{_("硬件、路由器規格、網站負載、連線內容及其他環境因素所影響而低於以上速度。連線 到海外網站之頻寬除受以上之因素影響外，還會受當地網絡之影")}}</h5>
+          <h5 class="featurette-heading">{{_("響，因此將低於本地可得之頻寬。影")}}</h5>
+      </ul>
+      <ul>
+         <div class="col-md-7 col-md-offset-1 col-xs-offset-1">
+          <h5 class="featurette-heading">{{_("任何因「香港寬頻」控制範圍以外的情況或環境(不可抗力理由)除外，包括但不限於天災、戰爭、叛亂、爆炸、火災、颱風、洪水、政府行動、政府或其他監管機構所施加的制約、")}}</h5>
+          <h5 class="featurette-heading">{{_("勞資糾紛、貿易爭議或任何由第三者所造成而「香港寬頻」無法控制的延誤。網絡的定義是指我們數據中心內的核心系統。")}}</h5>
+      </ul>
+      <ul>
+        <div class="col-md-7 col-md-offset-1 col-xs-offset-1">
+        <h5 class="featurette-heading">{{_("以上資料乃依據Speedtest於2017年6月出版的市場報告，詳情按此")}}</h5>
+        <h5 class="featurette-heading">{{_("*WiFi 6 網絡安全路由器 2x2 160MHz 達 2402Mbps 最大理論速度，較上一代 Wi-Fi 5 2x2 80MHz (867Mbps) 快約3倍。而實際Wi-Fi連接速度受住宅環境、網絡設定、覆蓋範圍、訊號干")}}</h5>
+        <h5 class="featurette-heading">{{_("擾及其他外在因素有所影響。若要使用Wi-Fi 6（802.11ax）的標準（160MHz 頻寬、MU-MIMO、OFDMA及1024-QAM）網絡，客戶的上網設備也需同時支援802.11ax的Wi-Fi 6標準。")}}</h5>
+        <h5 class="featurette-heading">{{_("#實際Wi-Fi 覆蓋範圍因環境因素而異，包括單位面積、單位間隔、建築物材料和結構以及其他外在因素。")}}</h5>
+      </ul>
+        <div class="row featurette"></div> 
+        <img src="{{url_for('static',filename='img/index(18).jpg')}}" class="img-responsive" style="border-style:solid;border-width:1px">
+        </div>
+      </div>
+
+{% endblock %}
