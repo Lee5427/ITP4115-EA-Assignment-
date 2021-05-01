@@ -1,7 +1,7 @@
 from flask_appbuilder import ModelView
 from flask_appbuilder.fieldwidgets import Select2Widget
 from flask_appbuilder.models.sqla.interface import SQLAInterface
-from .models import Employee,Department, Function, EmployeeHistory, Benefit, MenuItem, MenuCategory, News, NewsCategory, Service, RenewUpgrade, SupportMore, Menu, LoginMyHKBN, ReferralProgramme, Residential, EnterpriseSolutions, AboutUs
+from .models import Employee,Department, Function, EmployeeHistory, Benefit, MenuItem, MenuCategory, News, NewsCategory
 from wtforms.ext.sqlalchemy.fields import QuerySelectField
 from app import appbuilder, db
 from flask_appbuilder.baseviews import expose, BaseView
@@ -63,6 +63,8 @@ class NewsCategoryView(ModelView):
     datamodel = SQLAInterface(NewsCategory)
     list_columns = ['id', 'name']
 
+
+
 #class NewsPageView(BaseView):
 
 class ADboardView(BaseView):
@@ -82,7 +84,6 @@ class ADboardView(BaseView):
         param1 = 'Global News'
         self.update_redirect()
         return self.render_template('news.html', param1=param1)
-        
 
 class ServiceView(BaseView):
     default_view = 'fibrebroadband'
@@ -135,7 +136,7 @@ class ServiceView(BaseView):
       self.update_redirect()
       return self.render_template('smartphonesandsmartproducts.html', param1=param1)
 
-class SupportMoreView(BaseView):
+class SupportMore(BaseView):
     default_view = 'myhkbnapp'
     
     @expose('/myhkbnapp/')
@@ -149,73 +150,19 @@ class SupportMoreView(BaseView):
       param1 = 'Customer Support'
       self.update_redirect()
       return self.render_template('customersupport.html', param1=param1)
-
-
-class MenuView(BaseView):
-    default_view = 'loginmyhkbn'
-    
-    @expose('/loginmyhkbn/')
-    def loginmyhkbn(self):
-      param1 = 'Login My HKBN'
-      self.update_redirect()
-      return self.render_template('loginmyhkbn.html', param1=param1)
-      
-    @expose('/renewupgrade/')
-    def renewupgrade(self):
-      param1 = 'Renew/Upgrade'
-      self.update_redirect()
-      return self.render_template('renewupgrade.html', param1=param1)
-    
-    @expose('/referralprogramme/')
-    def referralprogramme(self):
-      param1 = 'Referral Programme'
-      self.update_redirect()
-      return self.render_template('referralprogramme.html', param1=param1)
-      
-    @expose('/residential/')
-    def residential(self):
-      param1 = 'Residential'
-      self.update_redirect()
-      return self.render_template('residential.html', param1=param1)
-    
-    @expose('/enterprisesolutions/')
-    def enterprisesolutions(self):
-      param1 = 'Enterprise Solutions'
-      self.update_redirect()
-      return self.render_template('enterprisesolutions.html', param1=param1)
-    
-    @expose('/aboutus/')
-    def aboutus(self):
-      param1 = 'AboutUs'
-      self.update_redirect()
-      return self.render_template('aboutus.html', param1=param1)
-
-
 db.create_all()
 
-
 """ Page View """
+appbuilder.add_view(ADboardView, 'local_news', category="News")
+appbuilder.add_link("Global News", href="/adboardview/global_news/", category="News")
 appbuilder.add_view(ServiceView, 'fibrebroadband', category="Service" )
 appbuilder.add_link("Smart Home", href="/serviceview/smarthome/", category="Service")
 appbuilder.add_link("Voice Calls", href="/serviceview/voicecalls/", category="Service")
-appbuilder.add_link("Mobile Voice", href="/serviceview/mobileservices/", category="Service")
-appbuilder.add_link("Cyber Security", href="/serviceview/cybersecurity/", category="Service")
-appbuilder.add_link("Entertainment", href="/serviceview/entertainment/", category="Service")
-appbuilder.add_link("Travel", href="/serviceview/travel/", category="Service")
-appbuilder.add_link("Smartphones and Smart Products", href="/serviceview/smartphonesandsmartproducts/", category="Service")
-appbuilder.add_view(SupportMoreView, 'myhkbnapp', category="SupportMore")
-appbuilder.add_link("Customer Support", href="/supportmoreview/custmoersupport/", category="SupportMore")
-appbuilder.add_view(MenuView, 'loginmyhkbn', category="Menu")
-appbuilder.add_link("Renew/Upgrade", href="/Menuview/renewupgrade/", category="Menu")
-appbuilder.add_link("Referral Programme", href="/Menuview/referralprogramme/", category="Menu")
-appbuilder.add_link("Residential", href="/Menuview/residential/", category="Menu")
-appbuilder.add_link("Enterprise Solutions", href="/Menuview/enterprisesolutions/", category="Menu")
-appbuilder.add_link("AboutUs", href="/Menuview/aboutus/", category="Menu")
+
 
 """ Custom Views """
 appbuilder.add_view(MenuItemView, "MenuItem", icon="fa-folder-open-o", category="Admin")
 appbuilder.add_view(MenuCategoryView, "MenuCategory", icon="fa-folder-open-o", category="Admin")
 appbuilder.add_view(NewsView, "News", icon="fa-folder-open-o", category="Admin")
 appbuilder.add_view(NewsCategoryView, "NewsCategory", icon="fa-folder-open-o", category="Admin")
-
 

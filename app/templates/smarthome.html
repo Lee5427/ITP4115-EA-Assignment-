@@ -8,90 +8,12 @@
 
 {% block content %}
 
-<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
-    <ol class="carousel-indicators">
-       <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-       <li data-target="#carousel-example-generic" data-slide-to="1" class="active"></li>
-       <li data-target="#carousel-example-generic" data-slide-to="2" class="active"></li>
-       <li data-target="#carousel-example-generic" data-slide-to="3" class="active"></li>
-       <li data-target="#carousel-example-generic" data-slide-to="4" class="active"></li>
-       <li data-target="#carousel-example-generic" data-slide-to="5" class="active"></li>
-    </ol>
     <!-- Wrapper for slides -->
-    <div class="carousel-inner">
-        <div class="item active">
-            <div class="jumbotron" style="background:url('static/img/index (1).png');width: 100%; padding-top: 20%; top: 20%; left: 20%;background-repeat: no-repeat;">
-            <div class="container">
-            <center>
-            <p><a class="btn btn-primary btn-lg" href="http://3.239.18.188:8080/login/"role="button">{{_("立即登記")}} <i class="fa fa-star"></i></a></p>
-            </center>
-            </div>
-           </div>
-        </div>
-
-        <div class="item">
-            <div class="jumbotron" style="background:url('static/img/index (2).png');width: 100%; padding-top: 20%; top: 20%; left: 20%;background-repeat: no-repeat;">
-            <div class="container">
-            <center>
-                <p><a class="btn btn-primary btn-lg" href="https://www.hkbn.net/personal/mobile/tc/mobile-service#hotphones" role="button">{{_("立即選購")}} &raquo;</a></p>
-            </center>
-            </div>
-            </div>
-        </div>
-
-        <div class="item">
-            <div class="jumbotron" style="background:url('static/img/index (3).png');width: 100%; padding-top: 20%; top: 20%; left: 20%;background-repeat: no-repeat;">
-            <div class="container">
-            <center>
-                <p><a class="btn btn-primary btn-lg" href="http://flask-appbuilder.readthedocs.org/en/latest/" role="button">{{_("了解更多")}} &raquo;</a></p>
-            </center>
-            </div>
-            </div>
-        </div>
-
-        <div class="item">
-            <div class="jumbotron" style="background:url('static/img/index (4).png');width: 100%; padding-top: 20%; %;background-repeat: no-repeat;">
-            <div class="container">
-            <center>
-                <p><a class="btn btn-primary btn-lg"  href="login" role="button">{{_("立即選購")}} &raquo;</a></p>
-            </center>
-            </div>
-            </div>
-        </div>
-                
-        <div class="item">
-            <div class="jumbotron" style="background:url('static/img/index (5).png');width: 100%; padding-top: 20%; top: 20%; left: 20%;background-repeat: no-repeat;">
-            <div class="container">
-            <center>
-                <p><a class="btn btn-primary btn-lg" href="https://refer.hkbn.net/tc?&itm_source=aio&itm_medium=aio_banner&itm_campaign=Jan2021HOMEplus" role="button">{{_("了解詳情")}} &raquo;</a></p>
-            </center>
-            </div>
-            </div>
-        </div>
-               
-        <div class="item">
-            <div class="jumbotron" style="background:url('static/img/index (6).png');width: 100%; padding-top: 20%; top: 20%; left: 20%;background-repeat: no-repeat;">
-            <div class="container">
-            <center>
-                <p><a class="btn btn-primary btn-lg" href="http://3.239.18.188:8080/login/" role="button">{{_("了解詳情")}} &raquo;</a></p>
-            </center>
-            </div>
-            </div>
-        </div>
-                
-</div>
+   
 
     <!-- Controls -->
-  <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
-    <span class="glyphicon glyphicon-chevron-left"></span>
-  </a>
-  <a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
-    <span class="glyphicon glyphicon-chevron-right"></span>
-  </a>
-
-</div>
-
-      <div class="row featurette" style="background:url('static/img/polaroid.jpg');width: 100%; padding-top: 20%; top: 20%; left: 20%;background-repeat: no-repeat;">
+      <div class="row featurette"></div> 
+      <img src="{{url_for('static',filename='img/test.jpg')}}" class="img-responsive" style="border-style:solid;border-width:1px">
         <div class="col-md-7 col-md-offset-1 col-xs-offset-1">
           <h2 class="featurette-heading">{{_("輕鬆把智能融入生活")}}</h2>
         <ul>
@@ -119,7 +41,7 @@
         </div>
       </div>
 
-      <div class="row featurette" style="background:url('static/img/old_moon.jpg');width: 100%; padding-top:20%; top: 20%; left: 20%;background-repeat: no-repeat;">
+      <div class="row featurette" style="background:url('static/img/old_moon.jpg');width: 100%; padding-top: 10%; top: 20%; left: 20%;background-repeat: no-repeat;">
         <div class="col-md-7 col-md-offset-1 col-xs-offset-1">
           <h2 class="featurette-heading">{{_("限時優惠平均每日低於$1")}}</h2>
         <ul>

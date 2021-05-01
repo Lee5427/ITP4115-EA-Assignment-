@@ -106,3 +106,75 @@ class NewsCategory(Model):
     __tablename__ = 'news_category'
     id = Column(Integer, primary_key=True)
     name = Column(String(50), nullable=False)
+
+class ADboard(Model):
+    __tablename__ = 'ADboard'
+    id = Column(Integer, primary_key=True)
+    image = Column(String(50),nullable=False)
+    order = Column(Integer,nullable=True)
+    expiry_day = Column(Date,nullable=True)
+    disable = Column(Integer,nullable=False)
+    
+class Smartphone(Model):
+    __tablename__ = 'Smartphone'
+    id = Column(Integer, primary_key=True)
+    image = Column(String(50),nullable=False)
+    name = Column(String(50),nullable=False)
+    model = Column(String(50),nullable=True)
+    exterior = Column(String(50),nullable=True)
+    price = Column(Integer,nullable=True)
+    
+class SIMplan(Model):
+    __tablename__ = 'SIMplan'
+    id = Column(Integer, primary_key=True)
+    name = Column(String(50),nullable=False)
+    exterior = Column(String(50),nullable=True)
+    price = Column(Integer,nullable=True)
+    giveaway1 = Column(Integer,nullable=True)
+    giveaway2 = Column(Integer,nullable=True)
+    giveaway3 = Column(Integer,nullable=True)
+    
+class Service(Model):
+    __tablename__ = 'Services'
+    id = Column(Integer,primary_key=True)
+    name = Column(String(50), nullable=False)
+
+class Menu(Model):
+    __tablename__ = 'menu'
+    id = Column(Integer,primary_key=True)
+    name = Column(String(50), nullable=False)
+
+class RenewUpgrade(Model):
+    __tablename__ = 'renewupgrade'
+    id = Column(Integer,primary_key=True)
+    name = Column(String(50), nullable=False)
+
+class SupportMore(Model):
+    __tablename__ = 'supportmore'
+    id = Column(Integer,primary_key=True)
+    name = Column(String(50), nullable=False)
+    
+class LoginMyHKBN(Model):
+    __tablename__ = 'loginmyhkbn'
+    id = Column(Integer,primary_key=True)
+    name = Column(String(50), nullable=False)
+    
+class ReferralProgramme(Model):
+    __tablename__ = 'referralprogramme'
+    id = Column(Integer,primary_key=True)
+    name = Column(String(50), nullable=False)
+    
+class Residential(Model):
+    __tablename__ = 'residential'
+    id = Column(Integer,primary_key=True)
+    name = Column(String(50), nullable=False)
+    
+class EnterpriseSolutions(Model):
+    __tablename__ = 'enterprisesolutions'
+    id = Column(Integer,primary_key=True)
+    name = Column(String(50), nullable=False)
+    
+class AboutUs(Model):
+    __tablename__ = 'aboutus'
+    id = Column(Integer,primary_key=True)
+    name = Column(String(50), nullable=False)
