@@ -7,8 +7,5 @@ class FABView(IndexView):
     """
     index_template = 'index.html'
 
-class ServiceView(IndexView):
-    
-    index_template = 'smarthome.html'
     
     

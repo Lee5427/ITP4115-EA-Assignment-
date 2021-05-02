@@ -1,7 +1,7 @@
 from flask_appbuilder import ModelView
 from flask_appbuilder.fieldwidgets import Select2Widget
 from flask_appbuilder.models.sqla.interface import SQLAInterface
-from .models import Employee,Department, Function, EmployeeHistory, Benefit, MenuItem, MenuCategory, News, NewsCategory, Service, RenewUpgrade, SupportMore, Menu, LoginMyHKBN, ReferralProgramme, Residential, EnterpriseSolutions, AboutUs
+from .models import Employee,Department, Function, EmployeeHistory, Benefit, MenuItem, MenuCategory, News, NewsCategory, Service, RenewUpgrade, SupportMore, Menu, LoginMyHKBN, ReferralProgramme, Residential, EnterpriseSolutions, AboutUs, SmartHome, SecurityPlan, BroadbandPlan, LoginUser, ADboard, SIMplan, Smartphone, EntainmentPlan, TravelPlan, SpecialPlan
 from wtforms.ext.sqlalchemy.fields import QuerySelectField
 from app import appbuilder, db
 from flask_appbuilder.baseviews import expose, BaseView
@@ -190,6 +190,37 @@ class MenuView(BaseView):
       self.update_redirect()
       return self.render_template('aboutus.html', param1=param1)
 
+class SmartHomeView(ModelView):
+    datamodel = SQLAInterface(SmartHome)
+    list_columns = ['id', 'name', 'category', 'price', 'amount'] 
+
+class SecurityPlanView(ModelView):
+    datamodel = SQLAInterface(SecurityPlan)
+    list_columns = ['id', 'name', 'category', 'price' ]
+    
+class BroadbandPlanView(ModelView):
+    datamodel = SQLAInterface(BroadbandPlan)
+    list_columns = ['id', 'name', 'category', 'price' ]
+
+class SmartphoneView(ModelView):
+    datamodel = SQLAInterface(Smartphone)
+    list_columns = ['id', 'image', 'name', 'model', 'exterior', 'price' ]
+    
+class SIMplanView(ModelView):
+    datamodel = SQLAInterface(SIMplan)
+    list_columns = ['id', 'name', 'exterior', 'price', 'giveaway1', 'giveaway2', 'giveaway3' ]
+    
+class EntainmentPlanView(ModelView):
+    datamodel = SQLAInterface(EntainmentPlan)
+    list_columns = ['id', 'name', 'price' ]
+    
+class TravelPlanView(ModelView):
+    datamodel = SQLAInterface(TravelPlan)
+    list_columns = ['id', 'name', 'price' ]
+
+class SpecialPlanView(ModelView):
+    datamodel = SQLAInterface(SpecialPlan)
+    list_columns = ['id', 'name', 'price', 'date' ] 
 
 db.create_all()
 
@@ -217,5 +248,12 @@ appbuilder.add_view(MenuItemView, "MenuItem", icon="fa-folder-open-o", category=
 appbuilder.add_view(MenuCategoryView, "MenuCategory", icon="fa-folder-open-o", category="Admin")
 appbuilder.add_view(NewsView, "News", icon="fa-folder-open-o", category="Admin")
 appbuilder.add_view(NewsCategoryView, "NewsCategory", icon="fa-folder-open-o", category="Admin")
-
-
+appbuilder.add_view(SmartHomeView, "SmartHome", icon="fa-folder-open-o", category="Admin")
+appbuilder.add_view(SecurityPlanView, "SecurityPlan", icon="fa-folder-open-o", category="Admin")
+appbuilder.add_view(BroadbandPlanView, "BroadbandPlan", icon="fa-folder-open-o", category="Admin")
+appbuilder.add_view(ADboardView, "ADboard", icon="fa-folder-open-o", category="Admin")
+appbuilder.add_view(SmartphoneView, "Smartphone", icon="fa-folder-open-o", category="Admin")
+appbuilder.add_view(SIMplanView, "SIMplan", icon="fa-folder-open-o", category="Admin")
+appbuilder.add_view(EntainmentPlanView, "EntainmentPlan", icon="fa-folder-open-o", category="Admin")
+appbuilder.add_view(TravelPlanView, "TravelPlan", icon="fa-folder-open-o", category="Admin")
+appbuilder.add_view(SpecialPlanView, "SpecialPlan", icon="fa-folder-open-o", category="Admin")

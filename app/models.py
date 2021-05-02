@@ -138,11 +138,13 @@ class Service(Model):
     __tablename__ = 'Services'
     id = Column(Integer,primary_key=True)
     name = Column(String(50), nullable=False)
+    link = Column(String(256), nullable=False)
 
 class Menu(Model):
     __tablename__ = 'menu'
     id = Column(Integer,primary_key=True)
     name = Column(String(50), nullable=False)
+    link = Column(String(256), nullable=False)
 
 class RenewUpgrade(Model):
     __tablename__ = 'renewupgrade'
@@ -187,10 +189,16 @@ class LoginUser(Model):
     username = Column(String(64),unique=True, nullable=False)
     password = Column(String(256), nullable=False)
     email = Column(String(64), nullable=False)
-    broadbandplan_id = Column(Integer, ForeignKey('broadbandplan.id'), nullable=False)
+    broadbandplan_id = Column(Integer, ForeignKey('broadbandplan.id'), nullable=True)
     broadbandplan = relationship("BroadbandPlan")
-    securityplan_id = Column(Integer, ForeignKey('securityplan.id'), nullable=False)
+    securityplan_id = Column(Integer, ForeignKey('securityplan.id'), nullable=True)
     securityplan = relationship("SecurityPlan")
+    entainmentplan_id = Column(Integer, ForeignKey('entainmentplan.id'), nullable=True)
+    entainmentplan = relationship("EntainmentPlan")
+    specialplan_id = Column(Integer, ForeignKey('specialplan.id'), nullable=True)
+    specialplan = relationship("SpecialPlan")
+    travelplan_id = Column(Integer, ForeignKey('travelplan.id'), nullable=True)
+    travelplan = relationship("TravelPlan")
     
 class SmartHome(Model):
     __tablename__ = 'smarthome'
@@ -213,3 +221,23 @@ class BroadbandPlan(Model):
     name = Column(String(64), nullable=False)
     price = Column(Integer, nullable=False)
     category = Column(String(64), nullable=False)
+    
+class EntainmentPlan(Model):
+    __tablename__ = 'entainmentplan'
+    id = Column(Integer,primary_key=True)
+    name = Column(String(64), nullable=False)
+    price = Column(Integer, nullable=False)
+    
+class TravelPlan(Model):
+    __tablename__ = 'travelplan'
+    id = Column(Integer,primary_key=True)
+    name = Column(String(64), nullable=False)
+    price = Column(Integer, nullable=False)
+    
+class SpecialPlan(Model):
+    __tablename__ = 'specialplan'
+    id = Column(Integer,primary_key=True)
+    name = Column(String(64), nullable=False)
+    price = Column(Integer, nullable=True)
+    date = Column(Date, nullable=False)
+    
